@@ -1,6 +1,7 @@
 package com.mariana.taskmanagerapi.exception;
 
 import com.mariana.taskmanagerapi.dto.ErroResponseDTO;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -88,6 +89,21 @@ public class GlobalExceptionHandler {
 
         return ResponseEntity
                 .status(HttpStatus.UNAUTHORIZED)
+                .body(erro);
+    }
+    
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<ErroResponseDTO> tratarAcessoNegado(
+            AccessDeniedException exception) {
+
+        ErroResponseDTO erro = new ErroResponseDTO(
+                404,
+                "Not Found",
+                "Tarefa não encontrada."
+        );
+
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
                 .body(erro);
     }
 
