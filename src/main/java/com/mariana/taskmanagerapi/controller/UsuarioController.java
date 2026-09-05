@@ -41,18 +41,9 @@ public class UsuarioController {
         description = "Cria um novo usuário no sistema"
     )
     @ApiResponses(value = {
-        @ApiResponse(
-            responseCode = "201",
-            description = "Usuário criado com sucesso"
-        ),
-        @ApiResponse(
-            responseCode = "400",
-            description = "Dados inválidos"
-        ),
-        @ApiResponse(
-            responseCode = "409",
-            description = "E-mail já cadastrado"
-        )
+        @ApiResponse(responseCode = "201", description = "Usuário criado com sucesso"),
+        @ApiResponse(responseCode = "400", description = "Dados inválidos"),
+        @ApiResponse(responseCode = "409", description = "E-mail já cadastrado")
     })
     @PostMapping
     public ResponseEntity<UsuarioResponseDTO> cadastrar(
@@ -68,10 +59,7 @@ public class UsuarioController {
         description = "Retorna a lista de usuários cadastrados no sistema"
     )
     @ApiResponses(value = {
-        @ApiResponse(
-            responseCode = "200",
-            description = "Lista de usuários retornada com sucesso"
-        )
+        @ApiResponse(responseCode = "200",description = "Lista de usuários retornada com sucesso")
     })
     @GetMapping
     public ResponseEntity<List<UsuarioResponseDTO>> listar() {
@@ -84,14 +72,8 @@ public class UsuarioController {
         description = "Retorna os dados de um usuário específico"
     )
     @ApiResponses(value = {
-        @ApiResponse(
-            responseCode = "200",
-            description = "Usuário encontrado com sucesso"
-        ),
-        @ApiResponse(
-            responseCode = "404",
-            description = "Usuário não encontrado"
-        )
+        @ApiResponse(responseCode = "200", description = "Usuário encontrado com sucesso"),
+        @ApiResponse(responseCode = "404", description = "Usuário não encontrado")
     })
     @GetMapping("/{id}")
     public ResponseEntity<UsuarioResponseDTO> buscar(
@@ -109,31 +91,15 @@ public class UsuarioController {
         description = "Atualiza os dados de um usuário existente"
     )
     @ApiResponses(value = {
-        @ApiResponse(
-            responseCode = "200",
-            description = "Usuário atualizado com sucesso"
-        ),
-        @ApiResponse(
-            responseCode = "400",
-            description = "Dados inválidos"
-        ),
-        @ApiResponse(
-            responseCode = "404",
-            description = "Usuário não encontrado"
-        ),
-        @ApiResponse(
-            responseCode = "409",
-            description = "E-mail já cadastrado"
-        )
+        @ApiResponse(responseCode = "200", description = "Usuário atualizado com sucesso"),
+        @ApiResponse(responseCode = "400", description = "Dados inválidos"),
+        @ApiResponse(responseCode = "404",description = "Usuário não encontrado"),
+        @ApiResponse(responseCode = "409",description = "E-mail já cadastrado")
     })
     @PutMapping("/{id}")
     public ResponseEntity<UsuarioResponseDTO> atualizar(
-            @Parameter(
-                description = "ID do usuário",
-                example = "1"
-            )
+            @Parameter(description = "ID do usuário",example = "1")
             @PathVariable Long id,
-
             @Valid @RequestBody UsuarioRequestDTO dto) {
 
         return ResponseEntity.ok(service.atualizar(id, dto));
@@ -144,21 +110,12 @@ public class UsuarioController {
         description = "Remove um usuário existente do sistema"
     )
     @ApiResponses(value = {
-        @ApiResponse(
-            responseCode = "204",
-            description = "Usuário removido com sucesso"
-        ),
-        @ApiResponse(
-            responseCode = "404",
-            description = "Usuário não encontrado"
-        )
+        @ApiResponse(responseCode = "204", description = "Usuário removido com sucesso"),
+        @ApiResponse(responseCode = "404", description = "Usuário não encontrado")
     })
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> remover(
-            @Parameter(
-                description = "ID do usuário",
-                example = "1"
-            )
+            @Parameter(description = "ID do usuário", example = "1")
             @PathVariable Long id) {
 
         service.remover(id);

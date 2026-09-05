@@ -7,16 +7,25 @@ import jakarta.validation.constraints.NotBlank;
 @Schema(description = "Dados para cadastro de um novo usuário")
 public class RegisterRequestDTO {
 
-    @Schema(description = "Nome completo do usuário", example = "Maria Silva", required = true)
+    @Schema(
+        description = "Nome completo do usuário", 
+        example = "Maria Silva", required = true
+    )
     @NotBlank(message = "O nome é obrigatório")
     private String nome;
     
-    @Schema(description = "Email do usuário", example = "maria@email.com", required = true)
+    @Schema(
+        description = "Email do usuário", 
+        example = "maria@email.com", required = true
+    )
     @Email(message = "Email inválido")
     @NotBlank(message = "O email é obrigatório")
     private String email;
     
-    @Schema(description = "Senha do usuário", example = "senha123", required = true)
+    @Schema(
+        description = "Senha do usuário", 
+        example = "senha123", required = true
+    )
     @NotBlank(message = "A senha é obrigatória")
     private String senha;
 

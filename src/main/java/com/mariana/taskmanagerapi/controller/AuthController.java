@@ -49,18 +49,9 @@ public class AuthController {
         description = "Cria uma nova conta de usuário no sistema"
     )
     @ApiResponses(value = {
-        @ApiResponse(
-            responseCode = "201",
-            description = "Usuário cadastrado com sucesso"
-        ),
-        @ApiResponse(
-            responseCode = "400",
-            description = "Dados inválidos"
-        ),
-        @ApiResponse(
-            responseCode = "409",
-            description = "E-mail já cadastrado"
-        )
+        @ApiResponse(responseCode = "201", description = "Usuário cadastrado com sucesso"),
+        @ApiResponse(responseCode = "400", description = "Dados inválidos"),
+        @ApiResponse(responseCode = "409", description = "E-mail já cadastrado")
     })
     @PostMapping("/register")
     public ResponseEntity<String> register(
@@ -87,18 +78,9 @@ public class AuthController {
         description = "Autentica o usuário e retorna um token JWT"
     )
     @ApiResponses(value = {
-        @ApiResponse(
-            responseCode = "200",
-            description = "Login realizado com sucesso"
-        ),
-        @ApiResponse(
-            responseCode = "401",
-            description = "E-mail ou senha inválidos"
-        ),
-        @ApiResponse(
-            responseCode = "400",
-            description = "Dados inválidos"
-        )
+        @ApiResponse(responseCode = "200", description = "Login realizado com sucesso"),
+        @ApiResponse(responseCode = "401", description = "E-mail ou senha inválidos"),
+        @ApiResponse(responseCode = "400",description = "Dados inválidos")
     })
     @PostMapping("/login")
     public ResponseEntity<LoginResponseDTO> login(

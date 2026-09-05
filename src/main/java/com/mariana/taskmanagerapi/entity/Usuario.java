@@ -31,7 +31,7 @@ public class Usuario {
     }
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -39,7 +39,7 @@ public class Usuario {
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public void setNome(String nome) {
@@ -47,7 +47,7 @@ public class Usuario {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -55,7 +55,7 @@ public class Usuario {
     }
 
     public String getSenha() {
-        return senha;
+        return this.senha;
     }
 
     public void setSenha(String senha) {
@@ -63,7 +63,7 @@ public class Usuario {
     }
     
     public List<Tarefa> getTarefas() {
-        return tarefas;
+        return this.tarefas;
     }
 
     public void setTarefas(List<Tarefa> tarefas) {

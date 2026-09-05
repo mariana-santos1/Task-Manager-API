@@ -28,7 +28,7 @@ public class Tarefa {
     }
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -36,7 +36,7 @@ public class Tarefa {
     }
 
     public String getTitulo() {
-        return titulo;
+        return this.titulo;
     }
 
     public void setTitulo(String titulo) {
@@ -44,7 +44,7 @@ public class Tarefa {
     }
 
     public String getDescricao() {
-        return descricao;
+        return this.descricao;
     }
 
     public void setDescricao(String descricao) {
@@ -52,7 +52,7 @@ public class Tarefa {
     }
 
     public boolean isConcluida() {
-        return concluida;
+        return this.concluida;
     }
 
     public void setConcluida(boolean concluida) {
@@ -60,7 +60,7 @@ public class Tarefa {
     }
     
     public Usuario getUsuario() {
-        return usuario;
+        return this.usuario;
     }
 
     public void setUsuario(Usuario usuario) {

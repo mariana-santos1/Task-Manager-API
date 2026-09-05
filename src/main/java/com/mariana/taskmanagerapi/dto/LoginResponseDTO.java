@@ -5,7 +5,10 @@ import io.swagger.v3.oas.annotations.media.Schema;
 @Schema(description = "Resposta com token de autenticação")
 public class LoginResponseDTO {
 
-    @Schema(description = "Token JWT para acessar a API", example = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...")
+    @Schema(
+        description = "Token JWT para acessar a API", 
+        example = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+    )
     private String token;
 
     public LoginResponseDTO() {

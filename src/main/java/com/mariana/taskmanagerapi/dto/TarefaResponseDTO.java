@@ -5,16 +5,28 @@ import io.swagger.v3.oas.annotations.media.Schema;
 @Schema(description = "Dados retornados de uma tarefa")
 public class TarefaResponseDTO {
 
-    @Schema(description = "Identificador único da tarefa", example = "1")
+    @Schema(
+        description = "Identificador único da tarefa", 
+        example = "1"
+    )
     private Long id;
 
-    @Schema(description = "Título da tarefa", example = "Estudar Spring Boot")
+    @Schema(
+        description = "Título da tarefa", 
+        example = "Estudar Spring Boot"
+    )
     private String titulo;
 
-    @Schema(description = "Descrição detalhada da tarefa", example = "Ler o capítulo sobre Swagger")
+    @Schema(
+        description = "Descrição detalhada da tarefa", 
+        example = "Ler o capítulo sobre Swagger"
+    )
     private String descricao;
 
-    @Schema(description = "Indica se a tarefa foi concluída", example = "false")
+    @Schema(
+        description = "Indica se a tarefa foi concluída", 
+        example = "false"
+    )
     private boolean concluida;
 
     public TarefaResponseDTO() {

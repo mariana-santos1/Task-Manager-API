@@ -59,15 +59,17 @@ public class TarefaController {
 
         String email = authentication.getName();
 
-        TarefaResponseDTO resposta =
-                service.salvar(dto, email);
+        TarefaResponseDTO resposta = service.salvar(dto, email);
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(resposta);
     }
 
-    @Operation(summary = "Listar tarefas", description = "Retorna todas as tarefas do usuário autenticado")
+    @Operation(
+            summary = "Listar tarefas", 
+            description = "Retorna todas as tarefas do usuário autenticado"
+    )
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "Lista retornada com sucesso"),
         @ApiResponse(responseCode = "401", description = "Usuário não autenticado")
@@ -84,13 +86,11 @@ public class TarefaController {
 
         String email = authentication.getName();
 
-        List<TarefaResponseDTO> tarefas =
-                service.listarPorUsuario(email);
+        List<TarefaResponseDTO> tarefas = service.listarPorUsuario(email);
 
         return ResponseEntity.ok(tarefas);
     }
     
-
     @Operation(
         summary = "Buscar tarefa por ID",
         description = "Retorna uma tarefa específica do usuário autenticado"
@@ -149,8 +149,7 @@ public class TarefaController {
 
         String email = authentication.getName();
 
-        return ResponseEntity.ok(
-                service.atualizar(id, dto, email)
+        return ResponseEntity.ok(service.atualizar(id, dto, email)
         );
     }
 

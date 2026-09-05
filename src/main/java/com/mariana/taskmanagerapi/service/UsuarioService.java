@@ -22,7 +22,6 @@ public class UsuarioService {
             ModelMapper modelMapper) {
 
         this.repository = repository;
-
         this.modelMapper = modelMapper;
     }
 
@@ -42,7 +41,6 @@ public class UsuarioService {
                 UsuarioResponseDTO.class);
     }
 
-
     public List<UsuarioResponseDTO> listar() {
 
         return repository.findAll()
@@ -53,7 +51,6 @@ public class UsuarioService {
                                 UsuarioResponseDTO.class))
                 .toList();
     }
-
 
     public UsuarioResponseDTO buscarPorId(Long id) {
 
@@ -67,7 +64,6 @@ public class UsuarioService {
                 usuario,
                 UsuarioResponseDTO.class);
     }
-
 
     public UsuarioResponseDTO atualizar(
             Long id,
@@ -88,7 +84,6 @@ public class UsuarioService {
                 usuario,
                 UsuarioResponseDTO.class);
     }
-
 
     public void remover(Long id) {
 
