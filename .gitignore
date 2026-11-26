@@ -31,3 +31,25 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Banco de dados SQLite ###
+# Arquivos gerados em tempo de execução (não versionar)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+### Logs ###
+*.log
+logs/
+
+### Variáveis de ambiente ###
+.env
+.env.*
+
+### Sistema operacional ###
+.DS_Store
+Thumbs.db
+Desktop.ini
